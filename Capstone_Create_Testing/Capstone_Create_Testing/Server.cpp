@@ -12,7 +12,7 @@ bool Server::Init()
 	RSDataThread = gcnew RSThread();
 	if (SerialPortWrapper::Open(Create2.CreatePort, CREATE2_PORT_NUMBER, CREATE2_BAUD, CREATE2_PARITY, CREATE2_DATABITS, CREATE2_STOPBITS, CREATE2_FLOWCONTROL) && RSR200.Init())
 		bInit = true;
-	
+
 
 	return bInit;
 }
@@ -43,7 +43,6 @@ void Server::AddCreateCommandToQueue(iRobotCreate2::CreateCommand^ Cmd)
 {
 	CreateWriteThread->CommandQueue->Enqueue(Cmd);
 }
-
 
 bool Server::StartRSDataThread()
 {

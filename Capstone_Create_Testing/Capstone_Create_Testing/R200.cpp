@@ -28,5 +28,5 @@ bool R200::Init()
 
 void R200::Cleanup()
 {
-	//SenseManager->Release();
+	SenseManager->Release();	// Un-commented 3/12/16
 }

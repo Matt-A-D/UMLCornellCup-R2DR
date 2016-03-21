@@ -46,11 +46,11 @@ void RSThread::Entry()
 
 			if (CenterMass.world.point.x > (TARGET_X_POSITION + X_POSITION_THRESHOLD))
 			{
-				Server::AddCreateCommandToQueue(Server::Create2.ProcessRadialDriveCommand(TURN_IN_PLACE_CW, 0, 100, 100));
+				Server::AddCreateCommandToQueue(Server::Create2.ProcessRadialDriveCommand(TURN_IN_PLACE_CW, 0, 200, 100));
 			}
 			else if (CenterMass.world.point.x < (TARGET_X_POSITION - X_POSITION_THRESHOLD))
 			{
-				Server::AddCreateCommandToQueue(Server::Create2.ProcessRadialDriveCommand(TURN_IN_PLACE_CCW, 0, 100, 100));
+				Server::AddCreateCommandToQueue(Server::Create2.ProcessRadialDriveCommand(TURN_IN_PLACE_CCW, 0, 200, 100));
 			}
 			else
 			{

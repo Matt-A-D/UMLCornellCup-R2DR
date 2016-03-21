@@ -1,7 +1,6 @@
 #include <iostream>
 #include <conio.h>
 #include <util_render.h>
-
 #include <pxcsensemanager.h>
 #include <pxcpersontrackingmodule.h>
 #include <pxcpersontrackingdata.h>
@@ -52,7 +51,7 @@ int main()
 
 		// Get person tracking data objects
 		PXCPersonTrackingData* PTData = PTModule->QueryOutput();
-		
+
 		// Make sure a person is in frame
 		if (PTData->QueryNumberOfPeople() > 0)
 		{
@@ -67,7 +66,6 @@ int main()
 			cout << "Distance: " << CenterMass.world.point.z << " X: " << CenterMass.world.point.x << " Y: " << CenterMass.world.point.y;
 			cout << "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b";
 		}
-		
 
 		// Render the color stream
 		ColorStreamRender.RenderFrame(sample->color);
@@ -76,7 +74,7 @@ int main()
 		SenseManager->ReleaseFrame();
 
 		// Break loop
-		if (_kbhit()) 
+		if (_kbhit())
 		{
 			int c = _getch() & 255;
 			if (c == 27 || c == 'q' || c == 'Q') break; // ESC|q|Q for Exit

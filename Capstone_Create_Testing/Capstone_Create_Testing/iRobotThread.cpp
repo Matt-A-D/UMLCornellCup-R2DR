@@ -28,3 +28,12 @@ void iRobotThread::Entry()
 		}
 	}
 }
+
+void iRobotThread::FlushCommandQueue()
+{
+	iRobotCreate2::CreateCommand^ Cmd;
+	while (CommandQueue->TryDequeue(Cmd))
+	{
+
+	}
+}

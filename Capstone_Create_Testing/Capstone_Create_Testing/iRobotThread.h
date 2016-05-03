@@ -13,4 +13,6 @@ public:
 	void Entry() override;
 	// queue for sending commands to the create
 	static ConcurrentQueue<iRobotCreate2::CreateCommand^>^ CommandQueue;
+	//clear all commands
+	static void FlushCommandQueue();
 };
